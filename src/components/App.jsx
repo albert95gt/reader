@@ -1,17 +1,18 @@
+import { Routes, Route } from 'react-router-dom';
+import { Layout } from './Layout/Layout';
+import { ListPage } from 'pages';
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        textTransform: 'uppercase',
-        color: '#010101',
-      }}
-    >
-      React homework template
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="preview" element={<div>Preview</div>} />
+          <Route path="list" element={<ListPage />} />
+          <Route path="list/:itemId" element={<h2>Single item Page</h2>} />
+
+          <Route path="create" element={<div>Create</div>} />
+        </Route>
+      </Routes>
+    </>
   );
 };
