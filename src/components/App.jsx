@@ -5,7 +5,7 @@ export const App = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/reader" element={<Layout />}>
           <Route path="preview" element={<div>Preview</div>} />
           <Route path="list" element={<ListPage />} />
           <Route path="list/:itemId" element={<h2>Single item Page</h2>} />
