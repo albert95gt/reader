@@ -1,5 +1,6 @@
 import { Outlet, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import { Toaster } from 'react-hot-toast';
 // Styled Components
 const Wrapper = styled.div`
   padding: 40px;
@@ -24,6 +25,7 @@ export const Layout = () => {
         <Link to="create">Create page</Link>
       </Nav>
       <Outlet />
+      <Toaster />
     </Wrapper>
   );
 };
