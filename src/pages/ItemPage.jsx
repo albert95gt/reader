@@ -11,15 +11,20 @@ import toast from 'react-hot-toast';
 export const ItemPage = () => {
   const [item, setItem] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [isDeleting, setIsDeleting] = useState(false);
   const { itemId } = useParams();
   const navigate = useNavigate();
 
   const deleteItem = async () => {
     try {
+      setIsDeleting(true);
       await deletePublication(itemId);
       toast.success('Publication has delete!');
+    } catch (error) {
+    } finally {
+      setIsDeleting(false);
       navigate('/list');
-    } catch (error) {}
+    }
   };
 
   useEffect(() => {
@@ -47,7 +52,7 @@ export const ItemPage = () => {
       {item && (
         <>
           <hr />
-          <button type="button" onClick={deleteItem}>
+          <button type="button" onClick={deleteItem} disabled={isDeleting}>
             Delete publication
           </button>
           <hr />
