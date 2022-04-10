@@ -6,7 +6,6 @@ export const App = () => {
     <>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path="preview" element={<div>Preview</div>} />
           <Route path="list" element={<ListPage />} />
           <Route path="list/:itemId" element={<ItemPage />} />
 

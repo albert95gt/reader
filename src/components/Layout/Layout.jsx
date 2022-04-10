@@ -20,7 +20,6 @@ export const Layout = () => {
   return (
     <Wrapper>
       <Nav>
-        <Link to="preview">Preview page</Link>
         <Link to="list">List page</Link>
         <Link to="create">Create page</Link>
       </Nav>
